@@ -37,16 +37,27 @@ public class AppConfig { // option + command + m
      *      스프링 빈의 필드에 공유 값을 설정하면 정말 큰 장애가 발생할 수 있다!!!
      */
 
+    /**
+     * @Bean 사용 시 프록시가 적용되지 않는 static 메서드는 컨테이너에 동일한 빈이 존재하는지에 대한
+     * 로직이 수행되지 않기 때문에 싱글톤을 보장하지 않는다.
+     */
+
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberRepository()
+
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
     @Bean
-    public static MemberRepository memberRepository() {
+    public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
     @Bean
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
