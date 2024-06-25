@@ -45,6 +45,7 @@ public class ConfigurationSingletonTest {
      * CGLIB 기술을 사용하지 않고 순수한 클래스로 등록되어 스프링 컨테이너에서 관리하지 않고,
      * 호출되는 빈이 모두 등록된다.(싱글톤 보장 X)
      */
+    
     @Test
     void configurationDeep() {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
