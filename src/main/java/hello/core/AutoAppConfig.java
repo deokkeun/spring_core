@@ -43,8 +43,8 @@ public class AutoAppConfig {
          * 수동 빈, 자동 빈 둘중 하나를 제거하거나 application.properties에
          * spring.main.allow-bean-definition-overriding=true 를 등록한다.
          */
-        @Bean(name = "memoryMemberRepository")
-        MemberRepository memberRepository() {
-                return new MemoryMemberRepository();
-        }
+//        @Bean(name = "memoryMemberRepository")
+//        MemberRepository memberRepository() {
+//                return new MemoryMemberRepository();
+//        }
 }
