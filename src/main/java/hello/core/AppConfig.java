@@ -13,10 +13,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class AppConfig {
+public class AppConfig { // factoryBeanName=appConfig;
 
     // 스프링은 빈을 생성하고, 의존관계를 주입하는 단계가 나누어져 있다
     // 동적인 객체 인스턴스 의존관계 주입
+
+    // 스프링 컨테이너는 (BeanDefinition)빈 설정 메타정보를 바탕으로
+    // @Bean, <bean> 당 각각 하나씩 메타 정보가 생성한다
 
     // 빈 이름은 항상 다른 이름을 부여
     @Bean
